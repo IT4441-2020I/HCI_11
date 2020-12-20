@@ -1,13 +1,13 @@
 //import from library 
-import React, {Component} from 'react'
-import{Link,NavLink} from 'react-router-dom'
-import {bullshitIcons, routePaths, TEXT_SIZES} from '../../utils/constants'
-import { BLACK, BLUE_1,GRAY_2, GREEN_1, GREEN_2, WHITE ,YELLOW_1} from '../../utils/palette';
-import logo from '../../assets//images/logo.png'
-import * as Icons from "react-icons/fa"
-import {IconContext} from 'react-icons'
-import {connect }from 'react-redux'
-import * as action from '../../redux/action/user.action'
+import React, {Component} from 'react';
+import {Link, NavLink} from 'react-router-dom';
+import {bullshitIcons, routePaths, TEXT_SIZES} from '../../utils/constants';
+import {BLACK, BLUE_1, GRAY_2, GREEN_1, GREEN_2, WHITE, YELLOW_1} from '../../utils/palette';
+import logo from '../../assets//images/logo.png';
+import * as Icons from 'react-icons/fa';
+import {IconContext} from 'react-icons';
+import {connect} from 'react-redux';
+import * as action from '../../redux/action/user.action';
 import Modal from 'react-modal';
 import AuthModal from './auth.modal';
 
@@ -89,25 +89,25 @@ class HeaderBarComponent extends Component {
 
           {
             headerBarItems.map((item) => {
-              let defautColor = WHITE;
+              let defautColor = BLACK;
               if (window.location.pathname === item.screen) {
-                defautColor = YELLOW_1;
+                defautColor =BLUE_1 ;
               }
               return (
-                <button onMouseOver={e => e.target.style.background = GREEN_2}
-                        onMouseOut={e => e.target.style.background = defautColor}
-                        onClick={e => e.target.style.background = GREEN_2}
-                        style={{background: defautColor}}
+                <text onMouseOver={e => e.target.style.color = YELLOW_1}
+                        onMouseOut={e => e.target.style.color = defautColor}
+                        onClick={e => e.target.style.color = GREEN_2}
+                        style={{color: defautColor}}
                 >
                   <Link to={item.screen}
                         style={styles.item}>
                     {item.label}
                   </Link>
 
-                </button>);
+                </text>);
 
             })
-          })}
+          }
         </div>
       </div>
 
